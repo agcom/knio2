@@ -1,0 +1,42 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.kotlin.jvm' version "$kotlinVersion"
+    id 'java-library'
+}
+
+group = 'io.github.agcom'
+version = '0.0.0'
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    implementation platform('org.jetbrains.kotlin:kotlin-bom')
+    implementation platform("org.jetbrains.kotlinx:kotlinx-coroutines-bom:$kotlinxCoroutinesVersion")
+
+    api 'org.jetbrains.kotlinx:kotlinx-coroutines-core'
+    testImplementation "io.kotest:kotest-runner-junit5:$kotestVersion"
+    testImplementation "io.kotest:kotest-assertions-core:$kotestVersion"
+}
+
+kotlin {
+    explicitApiWarning()
+}
+
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+}
+
+compileTestKotlin {
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
