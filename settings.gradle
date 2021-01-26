@@ -1,2 +1,15 @@
+pluginManagement {
+    plugins {
+        id 'org.jetbrains.kotlin.jvm' version "$kotlinVersion"
+    }
+}
+
 rootProject.name = 'knio2'
-include 'lib'
+include 'lib', 'examples'
+
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+}

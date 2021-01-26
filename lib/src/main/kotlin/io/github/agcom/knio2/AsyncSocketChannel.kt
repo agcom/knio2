@@ -24,7 +24,7 @@ public suspend fun AsynchronousSocketChannel.connectAwait(remote: SocketAddress)
  *
  * Reads a sequence of bytes from this channel into the given buffers.
  *
- * The offset and length parameters are always set to 0 and [dsts] size. You can achieve their application by [Array.sliceArray] function.
+ * The offset and length parameters are always set to 0 and [dsts] size. You can achieve their application by [Array.sliceArray] function and a spread operator.
  *
  * Note that the operation is not cancellable (suspends until completes or fails) because the underlying channel ([AsynchronousSocketChannel]) provides no guarantee for cancellation.
  * To mimic cancellation, you can ignore the caller coroutine (hence ignoring the results).
@@ -38,7 +38,7 @@ public suspend fun AsynchronousSocketChannel.readAwait(vararg dsts: ByteBuffer):
  *
  * Reads a sequence of bytes from this channel into the given buffers.
  *
- * * The offset and length parameters are always set to 0 and [srcs] size. You can achieve their application by [Array.sliceArray] function.
+ * * The offset and length parameters are always set to 0 and [srcs] size. You can achieve their application by [Array.sliceArray] function and a spread operator.
  *
  * Note that the operation is not cancellable (suspends until completes or fails) because the underlying channel ([AsynchronousSocketChannel]) provides no guarantee for cancellation.
  * To mimic cancellation, you can ignore the caller coroutine (hence ignoring the results).

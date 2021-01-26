@@ -1,0 +1,34 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' apply false
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'kotlin'
+
+    group = 'io.github.agcom'
+    version = '0.0.0'
+
+    dependencies {
+        implementation platform('org.jetbrains.kotlin:kotlin-bom')
+        implementation platform("org.jetbrains.kotlinx:kotlinx-coroutines-bom:$kotlinxCoroutinesVersion")
+    }
+
+    compileKotlin {
+        kotlinOptions {
+            jvmTarget = '11'
+        }
+    }
+
+    compileTestKotlin {
+        kotlinOptions {
+            jvmTarget = '11'
+        }
+    }
+
+    java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of('11')
+        }
+    }
+}
