@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extra>
+    <name>knio2</name>
+    <description>Kotlinx coroutines extensions for Java NIO.2</description>
+    <url>https://github.com/agcom/knio2</url>
+    <inceptionYear>2021</inceptionYear>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <id>agcom</id>
+            <name>Alireza Ghasemi</name>
+            <email>agcombest@gmail.com</email>
+            <url>https://github.com/agcom</url>
+        </developer>
+    </developers>
+    <scm>
+        <connection>https://github.com/agcom/knio2.git</connection>
+        <developerConnection>https://github.com/agcom/knio2.git</developerConnection>
+        <url>https://github.com/agcom/knio2</url>
+    </scm>
+    <issueManagement>
+        <system>Github Issues</system>
+        <url>https://github.com/agcom/knio2/issues</url>
+    </issueManagement>
+    <ciManagement>
+        <system>Github Actions</system>
+        <url>https://github.com/agcom/knio2/actions</url>
+    </ciManagement>
+    <distributionManagement>
+        <downloadUrl>https://bintray.com/agcom/knio2/lib</downloadUrl>
+    </distributionManagement>
+</extra>

@@ -1,11 +1,11 @@
 plugins {
     id 'java-library'
+    id 'maven-publish'
+    id 'com.jfrog.bintray' version "$bintrayVersion"
 }
 
 dependencies {
-    api 'org.jetbrains.kotlinx:kotlinx-coroutines-core'
-    testImplementation "io.kotest:kotest-runner-junit5:$kotestVersion"
-    testImplementation "io.kotest:kotest-assertions-core:$kotestVersion"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinxCoroutinesVersion"
 }
 
 kotlin {
@@ -14,4 +14,43 @@ kotlin {
 
 test {
     useJUnitPlatform()
+}
+
+java {
+    withSourcesJar()
+    withJavadocJar()
+}
+
+publishing {
+    publications {
+        lib(MavenPublication) {
+            artifactId = "knio2"
+            from components.java
+            pom {
+                packaging = 'jar'
+                withXml {
+                    def root = asNode()
+                    new XmlParser().parse(buildFile.toPath().parent.resolve('pom-extra.xml').toFile()).each {
+                        root.append(it)
+                    }
+                }
+            }
+        }
+    }
+}
+
+bintray {
+    user = 'agcom'
+    key = System.env.BINTRAY_KEY
+    publications = ['lib']
+    pkg {
+        repo = 'knio2'
+        name = 'lib'
+        version {
+            name = project.version.toString()
+            desc = 'First pre-release'
+            released = new Date()
+            vcsTag = "v${project.version}"
+        }
+    }
 }
