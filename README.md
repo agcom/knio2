@@ -23,6 +23,7 @@ For Maven and Ivy snippets, see the [distribution page](https://bintray.com/agco
 - Suspending extension functions for following classes,
   - `AsynchronousByteChannel`
   - `AsynchronousSocketChannel`
+  - `AsynchronousFileChannel`
 
   The functions are named after their original name plus `await` suffix.
 
