@@ -1,25 +1,25 @@
 package io.github.agcom.knio2
 
+import kotlinx.coroutines.suspendCancellableCoroutine
 import java.nio.ByteBuffer
 import java.nio.channels.AsynchronousByteChannel
-import kotlin.coroutines.suspendCoroutine
 
 /**
  * Suspending version of [read][AsynchronousByteChannel.read] function.
  *
- * Note that the operation is not cancellable (suspends until completes or fails) because the underlying channel ([AsynchronousByteChannel]) provides no guarantee for cancellation.
- * To mimic cancellation, you can ignore the caller coroutine (hence ignoring the results).
+ * The operation is not actually cancellable, because the underlying channel ([AsynchronousByteChannel]) provides no guarantee for cancellation.
+ * In case of cancellation, you may ignore the results.
  */
-public suspend fun AsynchronousByteChannel.readAwait(dst: ByteBuffer): Int = suspendCoroutine {
+public suspend fun AsynchronousByteChannel.readAwait(dst: ByteBuffer): Int = suspendCancellableCoroutine {
     read(dst, Unit, it.asCompletionHandler())
 }
 
 /**
  * Suspending version of [write][AsynchronousByteChannel.write] function.
  *
- * Note that the operation is not cancellable (suspends until completes or fails) because the underlying channel ([AsynchronousByteChannel]) provides no guarantee for cancellation.
- * To mimic cancellation, you can ignore the caller coroutine (hence ignoring the results).
+ * The operation is not actually cancellable, because the underlying channel ([AsynchronousByteChannel]) provides no guarantee for cancellation.
+ * In case of cancellation, you may ignore the results.
  */
-public suspend fun AsynchronousByteChannel.writeAwait(src: ByteBuffer): Int = suspendCoroutine {
+public suspend fun AsynchronousByteChannel.writeAwait(src: ByteBuffer): Int = suspendCancellableCoroutine {
     write(src, Unit, it.asCompletionHandler())
 }

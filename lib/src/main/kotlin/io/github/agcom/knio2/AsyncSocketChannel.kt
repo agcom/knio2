@@ -1,20 +1,20 @@
 package io.github.agcom.knio2
 
+import kotlinx.coroutines.suspendCancellableCoroutine
 import java.net.SocketAddress
 import java.nio.ByteBuffer
 import java.nio.channels.AsynchronousSocketChannel
 import java.util.concurrent.TimeUnit
-import kotlin.coroutines.suspendCoroutine
 
 /**
  * Suspending version of [connect][AsynchronousSocketChannel.connect] function.
  *
- * Note that the operation is not cancellable (suspends until completes or fails) because the underlying channel ([AsynchronousSocketChannel]) provides no guarantee for cancellation.
- * To mimic cancellation, you can ignore the caller coroutine (hence ignoring the results).
+ * The operation is not actually cancellable, because the underlying channel ([AsynchronousSocketChannel]) provides no guarantee for cancellation.
+ * In case of cancellation, you may ignore the results.
  * > The correct way to actually cancel the connection is to [close][AsynchronousSocketChannel.close] the channel.
  */
 public suspend fun AsynchronousSocketChannel.connectAwait(remote: SocketAddress) {
-    suspendCoroutine<Void?> {
+    suspendCancellableCoroutine<Void?> {
         connect(remote, Unit, it.asCompletionHandler())
     }
 }
@@ -26,10 +26,10 @@ public suspend fun AsynchronousSocketChannel.connectAwait(remote: SocketAddress)
  *
  * The offset and length parameters are always set to 0 and [dsts] size. You can achieve their application by [Array.sliceArray] function and a spread operator.
  *
- * Note that the operation is not cancellable (suspends until completes or fails) because the underlying channel ([AsynchronousSocketChannel]) provides no guarantee for cancellation.
- * To mimic cancellation, you can ignore the caller coroutine (hence ignoring the results).
+ * The operation is not actually cancellable, because the underlying channel ([AsynchronousSocketChannel]) provides no guarantee for cancellation.
+ * In case of cancellation, you may ignore the results.
  */
-public suspend fun AsynchronousSocketChannel.readAwait(vararg dsts: ByteBuffer): Long = suspendCoroutine {
+public suspend fun AsynchronousSocketChannel.readAwait(vararg dsts: ByteBuffer): Long = suspendCancellableCoroutine {
     read(dsts, 0, dsts.size, -1, TimeUnit.MILLISECONDS, Unit, it.asCompletionHandler())
 }
 
@@ -40,9 +40,9 @@ public suspend fun AsynchronousSocketChannel.readAwait(vararg dsts: ByteBuffer):
  *
  * * The offset and length parameters are always set to 0 and [srcs] size. You can achieve their application by [Array.sliceArray] function and a spread operator.
  *
- * Note that the operation is not cancellable (suspends until completes or fails) because the underlying channel ([AsynchronousSocketChannel]) provides no guarantee for cancellation.
- * To mimic cancellation, you can ignore the caller coroutine (hence ignoring the results).
+ * The operation is not actually cancellable, because the underlying channel ([AsynchronousSocketChannel]) provides no guarantee for cancellation.
+ * In case of cancellation, you may ignore the results.
  */
-public suspend fun AsynchronousSocketChannel.writeAwait(vararg srcs: ByteBuffer): Long = suspendCoroutine {
+public suspend fun AsynchronousSocketChannel.writeAwait(vararg srcs: ByteBuffer): Long = suspendCancellableCoroutine {
     write(srcs, 0, srcs.size, -1, TimeUnit.MILLISECONDS, Unit, it.asCompletionHandler())
 }
