@@ -11,7 +11,7 @@ repositories {
 }
 
 dependencies {
-    def knio2Version = '0.1.0'
+    def knio2Version = '0.2.0'
     implementation "io.github.agcom:knio2:$knio2Version"
 }
 ```
