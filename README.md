@@ -2,6 +2,7 @@
 
 [![Download](https://api.bintray.com/packages/agcom/knio2/lib/images/download.svg)](https://bintray.com/agcom/knio2/lib/_latestVersion)
 [![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0)
+[![Awesome Kotlin Badge](https://kotlin.link/awesome-kotlin.svg)](https://github.com/KotlinBy/awesome-kotlin)
 
 Just some [Kotlinx coroutines](https://kotlinlang.org/docs/reference/coroutines/coroutines-guide.html) extensions for `java.nio.channels.Asynchronous*` classes.
 
