@@ -10,6 +10,5 @@ include 'lib', 'examples'
 dependencyResolutionManagement {
     repositories {
         mavenCentral()
-        jcenter()
     }
 }
