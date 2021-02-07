@@ -29,8 +29,10 @@ For Maven and Ivy snippets, see the [distribution page](https://bintray.com/agco
   - `AsynchronousByteChannel`
   - `AsynchronousSocketChannel`
   - `AsynchronousFileChannel`
+  - `AsynchronousServerSocketChannel`
+  
 
-  The functions are named after their original name plus `await` suffix.
+The functions are named after their original name plus `await` suffix.
 
   ```kotlin
   import io.github.agcom.knio2.*
