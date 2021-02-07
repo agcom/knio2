@@ -1,8 +1,8 @@
 # KNIO2
 
 [![Download](https://api.bintray.com/packages/agcom/knio2/lib/images/download.svg)](https://bintray.com/agcom/knio2/lib/_latestVersion)
-[![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0)
 [![Awesome Kotlin Badge](https://kotlin.link/awesome-kotlin.svg)](https://github.com/KotlinBy/awesome-kotlin)
+[![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0)
 
 Just some [Kotlinx coroutines](https://kotlinlang.org/docs/reference/coroutines/coroutines-guide.html) extensions for `java.nio.channels.Asynchronous*` classes.
 
@@ -16,7 +16,7 @@ repositories {
 }
 
 dependencies {
-    def knio2Version = '0.2.0'
+    def knio2Version = '0.3.0'
     implementation "io.github.agcom:knio2:$knio2Version"
 }
 ```
@@ -31,25 +31,24 @@ For Maven and Ivy snippets, see the [distribution page](https://bintray.com/agco
   - `AsynchronousFileChannel`
   - `AsynchronousServerSocketChannel`
   
-
-The functions are named after their original name plus `await` suffix.
-
+  The functions are named after their original name plus `await` suffix.
+  
   ```kotlin
-  import io.github.agcom.knio2.*
-  import java.nio.ByteBuffer
-  import java.nio.channels.AsynchronousSocketChannel
-  
-  suspend fun main() {
-      val socket: AsynchronousSocketChannel = TODO().apply {
-          connectAwait(TODO()) // connectAwait
-      }
-  
-      ByteBuffer.allocate(TODO()).let {
-          socket.readAwait(it) // readAwait
-      }
-  
-      socket.writeAwait(Charsets.US_ASCII.encode("Hello world")) // writeAwait
-  }
+    import io.github.agcom.knio2.*
+    import java.nio.ByteBuffer
+    import java.nio.channels.AsynchronousSocketChannel
+    
+    suspend fun main() {
+        val socket: AsynchronousSocketChannel = TODO().apply {
+            connectAwait(TODO()) // connectAwait
+        }
+    
+        ByteBuffer.allocate(TODO()).let {
+            socket.readAwait(it) // readAwait
+        }
+    
+        socket.writeAwait(Charsets.US_ASCII.encode("Hello world")) // writeAwait
+    }
   ```
 
 ## Contribution

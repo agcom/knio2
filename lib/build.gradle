@@ -48,7 +48,7 @@ bintray {
         name = 'lib'
         version {
             name = project.version.toString()
-            desc = 'First pre-release'
+//            desc = ''
             released = new Date()
             vcsTag = "v${project.version}"
         }
