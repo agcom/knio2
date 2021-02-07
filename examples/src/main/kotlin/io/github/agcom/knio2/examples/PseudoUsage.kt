@@ -2,14 +2,11 @@
 
 package io.github.agcom.knio2.examples
 
-import io.github.agcom.knio2.connectAwait
-import io.github.agcom.knio2.readAwait
-import io.github.agcom.knio2.writeAwait
-import kotlinx.coroutines.runBlocking
+import io.github.agcom.knio2.*
 import java.nio.ByteBuffer
 import java.nio.channels.AsynchronousSocketChannel
 
-fun main() = runBlocking<Unit> {
+suspend fun main() {
     val socket: AsynchronousSocketChannel = TODO().apply {
         connectAwait(TODO()) // connectAwait
     }

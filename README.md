@@ -34,11 +34,10 @@ For Maven and Ivy snippets, see the [distribution page](https://bintray.com/agco
 
   ```kotlin
   import io.github.agcom.knio2.*
-  import kotlinx.coroutines.runBlocking
   import java.nio.ByteBuffer
   import java.nio.channels.AsynchronousSocketChannel
   
-  fun main() = runBlocking<Unit> {
+  suspend fun main() {
       val socket: AsynchronousSocketChannel = TODO().apply {
           connectAwait(TODO()) // connectAwait
       }
