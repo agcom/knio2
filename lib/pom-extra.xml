@@ -20,8 +20,8 @@
         </developer>
     </developers>
     <scm>
-        <connection>https://github.com/agcom/knio2.git</connection>
-        <developerConnection>https://github.com/agcom/knio2.git</developerConnection>
+        <connection>scm:git:git://github.com/agcom/knio2.git</connection>
+        <developerConnection>scm:git:git://github.com/agcom/knio2.git</developerConnection>
         <url>https://github.com/agcom/knio2</url>
     </scm>
     <issueManagement>
@@ -33,6 +33,6 @@
         <url>https://github.com/agcom/knio2/actions</url>
     </ciManagement>
     <distributionManagement>
-        <downloadUrl>https://bintray.com/agcom/knio2/lib</downloadUrl>
+        <downloadUrl>https://oss.sonatype.org/content/repositories/releases/io/github/agcom/knio2/</downloadUrl>
     </distributionManagement>
 </extra>

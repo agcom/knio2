@@ -8,11 +8,13 @@ Just some [Kotlinx coroutines](https://kotlinlang.org/docs/reference/coroutines/
 
 ## Setup
 
-Gradle,
+Published to the [Maven Central repository](https://search.maven.org/search?q=g:io.github.agcom%20a:knio2).
+
+Gradle snippet,
 
 ```groovy
 repositories {
-    jcenter()
+    mavenCentral()
 }
 
 dependencies {
@@ -20,8 +22,6 @@ dependencies {
     implementation "io.github.agcom:knio2:$knio2Version"
 }
 ```
-
-For Maven and Ivy snippets, see the [distribution page](https://bintray.com/agcom/knio2/lib).
 
 ## Components
 
