@@ -22,7 +22,7 @@ public suspend fun AsynchronousFileChannel.lockAwait(
 }
 
 /**
- * Suspending version of [lock][AsynchronousFileChannel.read] function.
+ * Suspending version of [read][AsynchronousFileChannel.read] function.
  *
  * The call is not cancellable (suspends until success or failure), because the underlying channel ([AsynchronousFileChannel]) provides no guarantee for cancellation.
  * Note that closing the channel (probably) continues every call with a failure (and that covers most use cases).
@@ -37,7 +37,7 @@ public suspend fun AsynchronousFileChannel.readAwait(
 }
 
 /**
- * Suspending version of [lock][AsynchronousFileChannel.write] function.
+ * Suspending version of [write][AsynchronousFileChannel.write] function.
  *
  * The call is not cancellable (suspends until success or failure), because the underlying channel ([AsynchronousFileChannel]) provides no guarantee for cancellation.
  * Note that closing the channel (probably) continues every call with a failure (and that covers most use cases).

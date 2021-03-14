@@ -37,7 +37,7 @@ public suspend fun AsynchronousSocketChannel.readAwait(vararg dsts: ByteBuffer):
 }
 
 /**
- * Suspending version of [read][AsynchronousSocketChannel.write] function.
+ * Suspending version of [write][AsynchronousSocketChannel.write] function.
  *
  * Reads a sequence of bytes from this channel into the given buffers.
  *
