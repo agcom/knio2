@@ -1,8 +1,8 @@
 # KNIO2
 
 [![Maven Central latest version badge](https://img.shields.io/maven-central/v/io.github.agcom/knio2)](https://search.maven.org/artifact/io.github.agcom/knio2)
-[![Awesome Kotlin Badge](https://kotlin.link/awesome-kotlin.svg)](https://github.com/KotlinBy/awesome-kotlin)
-[![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0)
+[![Awesome Kotlin badge](https://kotlin.link/awesome-kotlin.svg)](https://github.com/KotlinBy/awesome-kotlin)
+[![License badge](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0)
 
 Just some [Kotlinx coroutines](https://kotlinlang.org/docs/reference/coroutines/coroutines-guide.html) extensions for `java.nio.channels.Asynchronous*` classes.
 
